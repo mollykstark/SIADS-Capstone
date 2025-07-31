@@ -1,8 +1,9 @@
 # SIADS Capstone
 University of Michigan School of Information Applied Data Science Capstone
 
-Book Recommender from Goodreads Data
 Team 11 (The Aces)
+
+Book Recommender from Goodreads Data
 
 ## Table of Contents:
 ```
