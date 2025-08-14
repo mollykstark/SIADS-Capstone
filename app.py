@@ -151,37 +151,37 @@ def gate_download(key: str):
 custom_css = """
     /* Background Image */
     .gradio-container {
-        background-image: url('background.png');  /* Replace with your PNG image */
+        background-image: url('background.png');  
         background-color: #bedbed;  /* baby blue */
-        background-size: 200px 200px;  /* Smaller size for the image */
-        background-position: right bottom;  /* Position image in the bottom-right corner */
+        background-size: 200px 200px;  
+        background-position: right bottom;  
         background-repeat: no-repeat;
        /* height: 100vh;   Ensure it covers the entire viewport height */
         color: white;
         padding: 20px;
         margin: 10px;
-        border-radius: 10px;  /* Rounded corners */
+        border-radius: 10px;  
     }
 
     /* Typography */
     body {
-        font-family: 'Arial', sans-serif;  /* Modern, clean font */
+        font-family: 'Arial', sans-serif;  
     }
 
     h1, h2, h3, .gradio-title {
-        font-family: 'Arial', serif;  /* Serif font for titles */
-        font-weight: 700;  /* Make titles bolder */
-        font-size: 32px;  /* Increase font size for better visibility */
-        color: #333;  /* Dark color for text */
+        font-family: 'Arial', serif;  
+        font-weight: 700;  
+        font-size: 32px;  
+        color: #333;  
         margin-bottom: 20px;
     }
     .bottom-left-image {
         position: absolute;
-        bottom: 20px;  /* Distance from the bottom of the page */
-        left: 20px;    /* Distance from the left side of the page */
-        width: 150px;  /* Width of the image */
-        height: auto;  /* Keep the aspect ratio of the image */
-        border-radius: 10px;  /* Optional: round the corners of the image */
+        bottom: 20px;  
+        left: 20px;    
+        width: 150px;  
+        height: auto;  
+        border-radius: 10px;  
     }
 
     /* Button Styling */
@@ -193,25 +193,25 @@ custom_css = """
         font-size: 16px;
         font-weight: 600;
         border: none;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
-        transition: background-color 0.3s ease, transform 0.2s ease;  /* Smooth transitions */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
+        transition: background-color 0.3s ease, transform 0.2s ease;  
     }
 
     .gradio-button:hover {
-        background-color: #FF6347;  /* Darker coral on hover */
-        transform: scale(1.05);  /* Slightly enlarge the button on hover */
+        background-color: #FF6347;  
+        transform: scale(1.05);  
     }
 
     /* Slider Styling */
     .gradio-slider {
-        width: 80%;  /* Make the slider wider */
+        width: 80%;  
         margin: auto;
         border-radius: 8px;
         background-color: #F0F0F0;
     }
 
     .gradio-slider input {
-        border-radius: 8px;  /* Round the slider thumb */
+        border-radius: 8px;  
     }
 
     /* Input Field Styling */
@@ -224,7 +224,7 @@ custom_css = """
     }
 
     .gradio-input:focus {
-        border: 2px solid #FF6347;  /* Highlight the input on focus */
+        border: 2px solid #FF6347;  
     }
 
     /* Dropdown Styling */
@@ -240,7 +240,7 @@ custom_css = """
         padding: 20px;
         background-color: white;
         border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Subtle shadow for results */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
         margin-bottom: 20px;
         font-size: 16px;
     }
@@ -259,13 +259,8 @@ custom_css = """
     }
 
     .gradio-gallery img:hover {
-        transform: scale(1.05);  /* Slight zoom effect on hover */
+        transform: scale(1.05);  
     }
-"""
-image_html = """
-    <div class="bottom-left-image">
-        <img src="bookimage.png" alt="Book Image" />
-    </div>
 """
 with gr.Blocks() as demo:
     gr.HTML(f"<style>{custom_css}</style>")
