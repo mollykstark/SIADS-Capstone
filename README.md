@@ -24,7 +24,7 @@ SIADS-MILESTONE-1
 
 ## How to run our code:
 
-* Due to GitHub size limits, we are unable to upload the original JSON files that we sourced our data from, and instead uploaded the csv files we created from that data. The `creating_csvs.ipynb` notebook takes in those JSON files and creates the csvs, so there is no need to run it to use our recommender system. We have included it in our repository to preserve data provenance.
+* Due to GitHub size limits, we are unable to upload the original JSON files that we sourced our data from, and instead uploaded the csv files we created from that data. The `creating_csvs.ipynb` notebook takes in those JSON files and creates the csvs, so there is no need to run it to use our recommender system. We have included it in our repository to preserve data provenance. The JSON files required to run this notebook are `goodreads_book_authors.json`, `goodreads_books.json`, and `goodreads_reviews_spoiler_raw.json`.
 * We chose to separate our data preprocessing into a separate notebook (`data_preprocessing.ipynb`) from our recommender system notebook to have a clearer delineation between project steps. At the end of this notebook, all relevant data is saved in a single csv file that is included in this repository. Due to this, it is also unnecessary to run this notebook to use our recommender system.
 
 __There are 2 methods a user can use to access our recommender system:__
