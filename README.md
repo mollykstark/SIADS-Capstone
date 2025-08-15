@@ -1,9 +1,3 @@
----
-title: SIADS-Capstone
-app_file: src/app.py
-sdk: gradio
-sdk_version: 5.38.2
----
 # SIADS Capstone: University of Michigan School of Information Applied Data Science
 *Team 11 (The Aces)*: Book Recommender from Goodreads Data
 
