@@ -1,16 +1,16 @@
 import os
-import csv
 import numpy as np
 import pandas as pd
 import faiss
 import gradio as gr
+import csv
 from sklearn.preprocessing import normalize
 from sentence_transformers import SentenceTransformer
 
 # Load exported artifacts
-BOOKS = pd.read_csv("../data/books_meta.csv")
-D_MAT  = np.load("../data/desc_emb.npy").astype("float32")
-R_MAT  = np.load("../data/rev_emb.npy").astype("float32")
+BOOKS = pd.read_csv("src/data/books_meta.csv")
+D_MAT  = np.load("src/data/desc_emb.npy").astype("float32")
+R_MAT  = np.load("src/data/rev_emb.npy").astype("float32")
 
 # Normalize (inner product == cosine)
 D_MAT = normalize(D_MAT).astype("float32")
@@ -65,7 +65,7 @@ def format_card(i):
     """
 
 # ---------- Feedback logging ----------
-FEEDBACK_PATH = "../data/feedback.csv"
+FEEDBACK_PATH = "src/data/feedback.csv"
 
 def _ensure_feedback_header():
     if not os.path.exists(FEEDBACK_PATH):
@@ -162,12 +162,10 @@ custom_css = """
         margin: 10px;
         border-radius: 10px;  
     }
-
     /* Typography */
     body {
         font-family: 'Arial', sans-serif;  
     }
-
     h1, h2, h3, .gradio-title {
         font-family: 'Arial', serif;  
         font-weight: 700;  
@@ -183,7 +181,6 @@ custom_css = """
         height: auto;  
         border-radius: 10px;  
     }
-
     /* Button Styling */
     .gradio-button {
         background-color: #001F3F;  
@@ -196,12 +193,10 @@ custom_css = """
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
         transition: background-color 0.3s ease, transform 0.2s ease;  
     }
-
     .gradio-button:hover {
         background-color: #FF6347;  
         transform: scale(1.05);  
     }
-
     /* Slider Styling */
     .gradio-slider {
         width: 80%;  /* Make the slider wider */
@@ -209,11 +204,9 @@ custom_css = """
         border-radius: 8px;
         background-color: #F0F0F0;
     }
-
     .gradio-slider input {
         border-radius: 8px;  /* Round the slider thumb */
     }
-
     /* Input Field Styling */
     .gradio-input {
         border-radius: 8px;
@@ -222,11 +215,9 @@ custom_css = """
         background-color: rgba(255, 255, 255, 0.8);
         font-size: 16px;
     }
-
     .gradio-input:focus {
         border: 2px solid #FF6347;  /* Highlight the input on focus */
     }
-
     /* Dropdown Styling */
     .gradio-dropdown {
         border-radius: 8px;
@@ -234,7 +225,6 @@ custom_css = """
         background-color: rgba(255, 255, 255, 0.8);
         border: 1px solid #ddd;
     }
-
     /* Markdown Results (Cards) */
     .gradio-markdown {
         padding: 20px;
@@ -244,7 +234,6 @@ custom_css = """
         margin-bottom: 20px;
         font-size: 16px;
     }
-
     /* Gallery (Book Covers) */
     .gradio-gallery {
         display: grid;
@@ -252,12 +241,10 @@ custom_css = """
         gap: 20px;
         padding: 10px;
     }
-
     .gradio-gallery img {
         border-radius: 10px;
         transition: transform 0.3s ease-in-out;
     }
-
     .gradio-gallery img:hover {
         transform: scale(1.05);  /* Slight zoom effect on hover */
     }
@@ -323,6 +310,6 @@ with gr.Blocks() as demo:
         outputs=[fb_msg]
     )
     admin_pw.change(gate_download, inputs=[admin_pw], outputs=[dl])
-
+    
 if __name__ == "__main__":
-    demo.launch(server_name="0.0.0.0", server_port=int(os.getenv("PORT", 7860)))
+    demo.launch()
